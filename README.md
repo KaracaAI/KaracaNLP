@@ -1,4 +1,4 @@
-# Karaca ,NLP
+# Karaca NLP
 
 Karaca is a library designed for various natural language processing tasks in Turkish. This repository includes the following functionalities:
 
