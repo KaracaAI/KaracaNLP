@@ -27,7 +27,7 @@ from karaca import Normalize
 text = "Merhaba, dünya!"
 normalized_text = Normalize.lower_text(text)
 print(normalized_text)
-# Output: merhaba dunya
+# Output: merhaba dünya
 ```
 
 ### SentenceSpliter
