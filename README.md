@@ -6,6 +6,7 @@ Karaca is a library designed for various natural language processing tasks in Tu
 - **SentenceSpliter**: Split text into individual sentences.
 - **Emotion**: Guess the emotion expressed in a given text.
 - **News**: Categorize news articles into predefined categories.
+- **Deasciifier**: Convert ASCII-encoded Turkish text into its original form with diacritics and special characters.
 
 ## Installation
 
@@ -62,6 +63,18 @@ category = News.guess(text)
 print(category)
 # Output: "Tahmin Edilen konu: technology % 77.67"
 
+```
+
+### Deasciifier
+
+```
+from Karaca import Deasciifier
+
+my_ascii_turkish_txt = "Turkiye'nin baskenti Ankara'dir. Iklimi genellikle sicak ve kuraktir. Istanbul, Turkiye'nin en buyuk sehridir ve kulturel olarak cok zengindir."
+deasciifier = Deasciifier(my_ascii_turkish_txt)
+my_deasciified_turkish_txt = deasciifier.convert_to_turkish()
+print(my_deasciified_turkish_txt)
+# Output: "Türkiye'nin başkenti Ankara'dır. İklimi genellikle sıcak ve kuraktır. İstanbul, Türkiye'nin en büyük şehridir ve kültürel olarak çok zengindir."
 ```
 
 ## Testing
