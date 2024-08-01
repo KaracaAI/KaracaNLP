@@ -295,9 +295,3 @@ class Normalize:
         deasciify = Deasciifier(text)
         text = deasciify.convert()
         return text
-
-
-my_ascii_turkish_txt = "Opusmegi cagristiran catirtilar."
-deasciifier = Deasciifier(my_ascii_turkish_txt)
-my_deasciified_turkish_txt = deasciifier.convert_to_turkish()
-print(my_deasciified_turkish_txt)
