@@ -223,13 +223,11 @@ class Normalize:
 
     @classmethod
     def lower_text(cls, text: str) -> str:
-        replacements = str.maketrans("IİĞÜŞÖÇ", "ıiğüşöç")
-        return text.translate(replacements).lower()
+        return text.lower()
 
     @classmethod
     def upper_text(cls, text: str) -> str:
-        replacements = str.maketrans("ıiğüşöç", "IİĞÜŞÖÇ")
-        return text.translate(replacements).upper()
+        return text.upper()
 
     @classmethod
     def remove_punc(cls, text: str) -> str:
@@ -258,7 +256,7 @@ class Normalize:
         return text
 
     @classmethod
-    def normalize_chars(cls, text, charTable=None):
+    def asciify(cls, text, charTable=None):
         if charTable is None:
             charTable = str.maketrans("ğĞıİöÖüÜşŞçÇ", "gGiIoOuUsScC")
 
@@ -277,18 +275,6 @@ class Normalize:
         cumleler = [cumle.strip() for cumle in cumleler if cumle.strip()]
         return len(cumleler)
 
-    @classmethod
-    def find_idioms(cls, text):
-        text = Normalize.lower_text(text)
-        def loadIdioms():
-            idiomsFile = karaca_path + '/datas/deyimler.txt'
-            with open(idiomsFile, 'r', encoding='utf-8') as file:
-                idiomsR = file.read().splitlines()
-            return idiomsR
-        datas = loadIdioms()
-        idioms = [idiom for idiom in datas if idiom in text]
-
-        return idioms
 
     @classmethod
     def deasciify(cls, text: List[str]) -> List[str]:
